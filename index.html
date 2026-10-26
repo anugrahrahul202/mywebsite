@@ -1,0 +1,436 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Reason to Smile 💗</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:"Trebuchet MS",sans-serif;
+  background:linear-gradient(135deg,#fff0f6,#f4e8ff,#ffe6ef);
+  color:#70415e;
+  text-align:center;
+  min-height:100vh;
+}
+header{padding:28px 15px 10px}
+.eyebrow{
+  color:#bb6591;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  font-size:12px;
+}
+h1{
+  font-family:Georgia,serif;
+  font-weight:normal;
+  font-size:clamp(38px,8vw,65px);
+  color:#9b4777;
+  margin:15px 0;
+}
+header p{line-height:1.8;color:#936b83}
+main{max-width:650px;margin:auto;padding:12px 16px}
+.slide{
+  display:none;
+  background:#fffafc;
+  border:1px solid #f2c9dc;
+  border-radius:28px;
+  padding:30px 22px;
+  min-height:390px;
+  box-shadow:0 15px 40px #b65e8b18;
+  animation:appear .5s ease;
+}
+.slide.active{display:block}
+.emoji{font-size:48px;margin:8px}
+h2{font-family:Georgia,serif;color:#a34f7e;font-weight:normal}
+p{line-height:1.85}
+button,.button{
+  border:none;
+  border-radius:30px;
+  background:#d875a2;
+  color:white;
+  padding:13px 20px;
+  font-size:15px;
+  cursor:pointer;
+  margin:8px 4px;
+  text-decoration:none;
+  display:inline-block;
+  transition:.2s;
+}
+button:hover,.button:hover{background:#bc5687;transform:translateY(-2px)}
+.secondary{background:#f7e2ed;color:#944c74}
+.navigation{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:18px auto;
+}
+.dots{display:flex;gap:6px;justify-content:center}
+.dot{
+  width:10px;height:10px;padding:0;margin:0;
+  border-radius:50%;background:#eac2d5;
+}
+.dot.active{background:#bd568a}
+.small{font-size:13px;color:#ad7897}
+.envelope{
+  font-size:90px;
+  cursor:pointer;
+  margin:15px;
+  transition:.3s;
+}
+.envelope:hover{transform:scale(1.1) rotate(-5deg)}
+.letter{
+  display:none;
+  text-align:left;
+  padding:18px;
+  background:#fff0f6;
+  border-radius:18px;
+}
+.letter.show{display:block;animation:appear .5s}
+.kitty{
+  font-size:75px;
+  cursor:pointer;
+  display:inline-block;
+  animation:bob 2s infinite;
+}
+.cheer{
+  background:#fff0f6;
+  border:1px dashed #e7a9c5;
+  border-radius:20px;
+  padding:16px;
+  line-height:2;
+}
+.bouquet{
+  display:block;
+  max-width:340px;
+  margin:20px auto;
+  padding:22px;
+  border-radius:22px;
+  background:#fff0f6;
+  border:1px solid #efc4d7;
+  text-decoration:none;
+  color:#91456f;
+}
+.bouquet span{font-size:75px;display:block}
+.gift{font-size:85px;cursor:pointer;transition:.3s}
+.gift:hover{transform:rotate(-8deg) scale(1.1)}
+.hidden{display:none}
+.giftMessage{
+  background:#fff0f6;
+  border-radius:20px;
+  padding:15px;
+  animation:appear .5s;
+}
+.flower{
+  font-size:70px;
+  animation:bloom 1s ease;
+}
+footer{padding:20px;color:#ad7897;font-size:12px}
+.heart{
+  position:fixed;
+  pointer-events:none;
+  z-index:10;
+  animation:float 2s forwards;
+  font-size:24px;
+}
+@keyframes appear{
+  from{opacity:0;transform:translateY(12px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes bob{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
+}
+@keyframes bloom{
+  from{transform:scale(0)}
+  to{transform:scale(1)}
+}
+@keyframes float{
+  to{transform:translateY(-150px) rotate(25deg);opacity:0}
+}
+@media(max-width:450px){
+  .slide{padding:25px 16px;min-height:400px}
+}
+</style>
+</head>
+
+<body>
+<audio id="backgroundMusic" loop>
+  <source src="Perfect.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicButton"
+  onclick="toggleMusic()"
+  style="position:fixed;bottom:20px;right:15px;z-index:999;
+  background:#d875a2;color:white;border:0;border-radius:30px;
+  padding:13px 18px;cursor:pointer;">
+  🎵 Play our song
+</button>
+
+<script>
+const music = document.getElementById("backgroundMusic");
+
+function toggleMusic() {
+  if (music.paused) {
+    music.play();
+    document.getElementById("musicButton").textContent =
+      "💗 Pause our song";
+  } else {
+    music.pause();
+    document.getElementById("musicButton").textContent =
+      "🎵 Play our song";
+  }
+}
+</script>
+
+<header>
+  <div class="eyebrow">A tiny pocket of magic ✨</div>
+  <h1>A Little Reason<br>to Smile</h1>
+  <p>A little pastel storybook, made just for you. 💗<br>
+  Take your time and enjoy every little page.</p>
+</header>
+
+<main>
+
+<!-- SLIDE 1 -->
+<section class="slide active">
+  <div class="emoji">🌙 ✨ 🌷</div>
+  <div class="eyebrow">Chapter One</div>
+  <h2>Hey, my special girl</h2>
+  <p>Just a tiny surprise for someone who deserves a little extra happiness today.</p>
+  <div class="emoji">🐱💕🐱</div>
+  <p>No big reason. Just wanted to make you smile. ♡</p>
+  <button onclick="nextSlide()">Open your little surprise →</button>
+</section>
+
+<!-- SLIDE 2 -->
+<section class="slide">
+  <div class="emoji">💌</div>
+  <h2>A tiny letter, just for you</h2>
+  <div class="envelope" onclick="openLetter()">💌</div>
+  <p class="small" id="letterHint">Tap the envelope to open it</p>
+  <div class="letter" id="letter">
+    <h2>Hey, you. 🌷</h2>
+    <p>I don't know how your day has been, but I hope this little corner of the internet brings a smile to your face.</p>
+    <p>You don't have to be cheerful all the time. There's something lovely about being exactly who you are.</p>
+    <p>No pressure. No expectations. Just a little smile, meant for you. ♡</p>
+  </div>
+  <button onclick="nextSlide()">Next little page →</button>
+</section>
+
+<!-- SLIDE 3 -->
+<section class="slide">
+  <div class="emoji">🐱💗🐱</div>
+  <h2>Just for you, cutie</h2>
+  <div class="kitty">🐈💕🐈</div>
+  <p>The world feels a little softer with people like you in it.</p>
+  <p>I hope you remember that on the hard days, too. ♡</p>
+  <button onclick="nextSlide()">A little gift awaits →</button>
+</section>
+
+<!-- SLIDE 4 -->
+<section class="slide">
+  <div class="emoji">💐</div>
+  <h2>A bouquet for my flower</h2>
+  <p>I picked a little bouquet just for you. 🌷</p>
+
+  <a class="bouquet" target="_blank" rel="noopener noreferrer"
+  href="https://digibouquet.vercel.app/bouquet/620a357c-492d-4780-8110-d05d10342c47">
+    <span>💐</span>
+    <strong>Open your bouquet</strong>
+    <p>Made with love, just for you ↗</p>
+  </a>
+
+  <p class="small">A little sunshine for my favorite person. ♡</p>
+  <button onclick="nextSlide()">Meet your cheer squad →</button>
+</section>
+
+<!-- SLIDE 5 -->
+<section class="slide">
+  <div class="emoji">🎀 🐱 🎀</div>
+  <h2>Your tiny cheer squad</h2>
+  <div class="kitty" onclick="boop()">🐱</div>
+  <p id="kittyText">Boop the kitty for a little compliment!</p>
+
+  <div class="cheer">
+    ♡ You're doing better than you think.<br>
+    ♡ You deserve gentle days.<br>
+    ♡ We're cheering for you.<br>
+    ♡ Don't forget to smile today!
+  </div>
+
+  <button onclick="nextSlide()">One honest little question →</button>
+</section>
+
+<!-- SLIDE 6 -->
+<section class="slide">
+  <div class="emoji">💭♡</div>
+  <h2>Can I ask you something?</h2>
+  <h3>Why have you been a little distant?</h3>
+
+  <p>I might be misunderstanding, and I don't want to assume anything.</p>
+
+  <p>Maybe you're busy, need space, have a lot on your mind, or just aren't feeling chatty. All of those are okay. 💗</p>
+
+  <p>If something's wrong between us, I'd rather understand than guess. If you need space, I'll respect that too.</p>
+
+  <p class="small">You don't owe me an answer before you're ready. I just hope you're okay. ♡</p>
+
+  <button onclick="nextSlide()">A few extra reminders →</button>
+</section>
+
+<!-- SLIDE 7 -->
+<section class="slide">
+  <div class="emoji">🌸✨🌸</div>
+  <h2>A few extra special touches</h2>
+
+  <p>🌷 You're beautiful, inside and out.</p>
+  <p>☀️ Your smile is a favorite kind of sunshine.</p>
+  <p>🫶 You deserve kindness, including your own.</p>
+  <p>💗 You don't have to be perfect to be wonderful.</p>
+
+  <div class="flower" id="flower">🌱</div>
+  <button onclick="bloom()">Let this little flower bloom 🌷</button>
+  <br>
+  <button onclick="nextSlide()">One last thing… →</button>
+</section>
+
+<!-- SLIDE 8 -->
+<section class="slide">
+  <div class="emoji">🌙💖✨</div>
+  <div class="eyebrow">And finally…</div>
+  <h2>I just wanted you to know…</h2>
+
+  <div class="gift" onclick="unwrap()" id="gift">🎁</div>
+  <p class="small">Tap to unwrap your surprise</p>
+
+  <div class="giftMessage hidden" id="giftMessage">
+    <h2>You're a little bit of sunshine. ☀️</h2>
+    <p>I hope this little surprise made you smile, even if it's just a little.</p>
+    <p>Thank you for being you. No pressure, no expectations. Take care of yourself, okay? ♡</p>
+    <div class="emoji">💗🌷💗</div>
+  </div>
+
+  <p>I'll be here whenever you're ready. ♡</p>
+  <button onclick="restart()">Read it again ↺</button>
+</section>
+
+<div class="navigation">
+  <button class="secondary" id="backBtn" onclick="changeSlide(-1)">← Back</button>
+  <div class="dots" id="dots"></div>
+  <button id="nextBtn" onclick="changeSlide(1)">Next →</button>
+</div>
+
+<p class="small">Made with stardust, soft hearts, and kind intentions. ✨</p>
+
+</main>
+
+<footer>For a special person, from someone who wishes her well. 💗</footer>
+
+<script>
+let current = 0;
+const slides = document.querySelectorAll(".slide");
+const dots = document.getElementById("dots");
+
+slides.forEach((slide, index) => {
+  const dot = document.createElement("button");
+  dot.className = "dot";
+  dot.setAttribute("aria-label", "Go to page " + (index + 1));
+  dot.onclick = () => showSlide(index);
+  dots.appendChild(dot);
+});
+
+function showSlide(index) {
+  current = Math.max(0, Math.min(index, slides.length - 1));
+
+  slides.forEach((slide, i) => {
+    slide.classList.toggle("active", i === current);
+  });
+
+  [...dots.children].forEach((dot, i) => {
+    dot.classList.toggle("active", i === current);
+  });
+
+  document.getElementById("backBtn").disabled = current === 0;
+  document.getElementById("nextBtn").disabled = current === slides.length - 1;
+
+  window.scrollTo({top: 0, behavior: "smooth"});
+}
+
+function nextSlide() {
+  changeSlide(1);
+}
+
+function changeSlide(amount) {
+  showSlide(current + amount);
+}
+
+function restart() {
+  showSlide(0);
+}
+
+function hearts(count = 12) {
+  const symbols = ["♡", "♥", "✨", "💗"];
+
+  for (let i = 0; i < count; i++) {
+    const heart = document.createElement("span");
+    heart.className = "heart";
+    heart.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.top = (50 + Math.random() * 35) + "vh";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 2200);
+  }
+}
+
+function openLetter() {
+  const letter = document.getElementById("letter");
+  letter.classList.toggle("show");
+
+  document.getElementById("letterHint").textContent =
+    letter.classList.contains("show")
+      ? "A little kindness, just because. ♡"
+      : "Tap the envelope to open it";
+
+  if (letter.classList.contains("show")) hearts();
+}
+
+function boop() {
+  const compliments = [
+    "Official kitty verdict: you deserve a cozy day. 💗",
+    "Reminder: you're wonderful just as you are. ✨",
+    "This kitty thinks you deserve extra happiness today. 🥹",
+    "Psst... someone hopes you smile today. ♡"
+  ];
+
+  document.getElementById("kittyText").textContent =
+    compliments[Math.floor(Math.random() * compliments.length)];
+
+  hearts(8);
+}
+
+function bloom() {
+  document.getElementById("flower").textContent = "🌸";
+  hearts(15);
+}
+
+function unwrap() {
+  const message = document.getElementById("giftMessage");
+  message.classList.toggle("hidden");
+
+  document.getElementById("gift").textContent =
+    message.classList.contains("hidden") ? "🎁" : "💝";
+
+  if (!message.classList.contains("hidden")) hearts(20);
+}
+
+showSlide(0);
+</script>
+
+</body>
+</html>
+```
